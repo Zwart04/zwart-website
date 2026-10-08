@@ -135,13 +135,89 @@ body{background:#fff;color:#1d1d1f;font-family:Inter,"DM Sans",Arial,sans-serif}
 .daily-days i{background:#f3f3f6;border-radius:7px;padding:11px 2px;text-align:center;font-size:9px;font-style:normal}
 .daily-days i:nth-child(4){background:#cce2ff;color:#0066cc}
 @media(max-width:730px){.container{width:calc(100% - 40px)}.hero{padding-top:78px}.hero h1{font-size:clamp(43px,10vw,66px)}.hero-side p{font-size:16px}.hero-foot{margin-top:75px}#produk{padding-left:20px!important;padding-right:20px!important}.approach{padding-left:20px;padding-right:20px}.lead-card .feature-media{min-height:340px}.dagang-demo{grid-template-columns:70px 1fr;height:300px}.demo-side{padding:12px 5px;gap:13px}.demo-main{padding:14px}.demo-main h4{font-size:15px}.demo-stats b{font-size:15px}.demo-graph{padding:8px}.demo-bars{height:54px}.feature-copy{min-height:270px}.feature-media{min-height:285px}}
+
+/* Motion system: slow, deliberate, lightweight */
+:root{--ease-zwart:cubic-bezier(.22,1,.36,1)}
+html{scroll-padding-top:76px}
+.hero{position:relative;isolation:isolate;overflow:hidden}
+.hero:before{content:"";position:absolute;z-index:-1;top:10px;left:50%;width:min(1180px,100vw);height:570px;transform:translateX(-50%);background:radial-gradient(ellipse at 54% 43%,rgba(0,113,227,.075),transparent 63%);pointer-events:none}
+.hero:after{content:"";position:absolute;z-index:-1;inset:0;background-image:linear-gradient(#0071e30b 1px,transparent 1px),linear-gradient(90deg,#0071e30b 1px,transparent 1px);background-size:74px 74px;mask-image:linear-gradient(to bottom,transparent 4%,#000 40%,transparent 90%);pointer-events:none}
+.hero h1{max-width:1100px}
+.hero-layout{position:relative}
+.hero-side{position:relative}
+.feature-card{transition:transform .65s var(--ease-zwart),background-color .5s ease}
+.feature-card:hover{transform:translateY(-5px)}
+.feature-media{isolation:isolate}
+.feature-media:before{content:"";position:absolute;width:520px;height:520px;max-width:130%;border:1px solid rgba(0,113,227,.075);border-radius:50%;pointer-events:none}
+.feature-media:after{content:"";position:absolute;width:380px;height:380px;max-width:100%;border:1px solid rgba(0,113,227,.10);border-radius:50%;pointer-events:none}
+.feature-media>:not(.media-caption){position:relative;z-index:1}
+.feature-action,.btn,.navcta{transition:background .3s ease,color .3s ease,transform .4s var(--ease-zwart)}
+.feature-action:hover{transform:translateX(5px)}
+.btn:hover,.navcta:hover{transform:translateY(-2px)}
+.dagang-demo{width:min(98%,560px);height:380px;box-shadow:0 20px 58px rgba(31,42,65,.10);transform:perspective(1250px) rotateY(-5deg) rotateX(2deg);transition:transform 1s var(--ease-zwart)}
+.lead-card:hover .dagang-demo{transform:perspective(1250px) rotateY(0) rotateX(0)}
+.demo-main{background:#fff}
+.demo-side{background:#f5f7fc}
+.demo-stats>div{background:#fafbfe}
+.demo-graph{background:#fff}
+.daily-demo{width:min(90%,410px);box-shadow:0 16px 45px rgba(0,0,0,.08);transform:perspective(1100px) rotateY(-5deg) rotate(2deg);transition:transform 1s var(--ease-zwart)}
+.feature-card:hover .daily-demo{transform:perspective(1100px) rotateY(0) rotate(0)}
+.daily-task{transition:background .25s ease}
+.daily-task:hover{background:#e8f2ff}
+.demo-bottom{display:flex;justify-content:space-between;gap:12px;padding-top:8px;font-size:9px;color:#92929d}
+.demo-bottom strong{color:#0071e3}
+.daily-progress{height:8px;background:#e9edf5;border-radius:20px;overflow:hidden;margin:16px 0 8px}
+.daily-progress i{display:block;width:66%;height:100%;background:#0071e3;border-radius:20px}
+.daily-meta{display:flex;justify-content:space-between;gap:6px;font-size:10px;color:#71717b}
+[data-reveal]{opacity:1;transform:none}
+.js-motion [data-reveal]{opacity:0;transform:translate3d(0,28px,0);transition:opacity .95s var(--ease-zwart),transform .95s var(--ease-zwart);transition-delay:var(--reveal-delay,0ms);will-change:opacity,transform}
+.js-motion [data-reveal].in-view{opacity:1;transform:translate3d(0,0,0);will-change:auto}
+.js-motion .hero [data-reveal]{transition-duration:1.05s}
+@media(max-width:760px){
+html{scroll-padding-top:64px}
+.hero{padding-top:74px}.hero:before{height:480px}
+.hero:after{background-size:48px 48px}
+.feature-card:hover{transform:none}
+.feature-media:before{width:310px;height:310px}.feature-media:after{width:235px;height:235px}
+.dagang-demo{width:calc(100% - 12px);height:310px;transform:none;box-shadow:0 10px 28px rgba(31,42,65,.08)}
+.daily-demo{transform:none;width:calc(100% - 20px)}
+.lead-card:hover .dagang-demo,.feature-card:hover .daily-demo{transform:none}
+.demo-stats{gap:5px}.demo-stats>div{padding:7px}.demo-stats small,.demo-stats em{font-size:7px}
+.demo-bars{gap:4px}
+.feature-copy,.lead-card .feature-copy{min-width:0}
+.feature-media{min-width:0;overflow:hidden}
+.contact .actions{display:flex;flex-wrap:wrap}
+.js-motion [data-reveal]{transform:translate3d(0,16px,0)}
+}
+@media(max-width:380px){
+.container{width:calc(100% - 32px)}
+#produk{padding-left:16px!important;padding-right:16px!important}
+.nav .links{gap:12px}.navcta{padding:9px 12px}
+.hero h1{font-size:clamp(37px,10vw,48px)}
+.feature-copy h3{font-size:33px}
+.feature-copy{padding:22px}
+.lead-card .feature-copy{padding:24px}
+.dagang-demo{grid-template-columns:57px 1fr;height:285px}
+.demo-main{padding:9px}.demo-main h4{font-size:13px;margin:14px 0 2px}
+.demo-side{gap:11px;padding:10px 4px;font-size:8px}
+.demo-side strong{font-size:11px}.demo-stats b{font-size:13px}
+.demo-stats>div{padding:5px}
+.demo-graph{padding:6px}.demo-bars{height:45px}
+.daily-demo{padding:16px}.daily-head strong{font-size:17px}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+.js-motion [data-reveal]{opacity:1;transform:none;transition:none}
+.feature-card,.dagang-demo,.daily-demo,.btn,.navcta,.feature-action{transition:none!important;animation:none!important}
+.feature-card:hover,.lead-card:hover .dagang-demo,.feature-card:hover .daily-demo{transform:none!important}
+}
 </style></head>
 <body>
 <header class="topbar"><nav class="container nav" aria-label="Navigasi utama"><a href="#awal" class="logo" aria-label="Zwart Id beranda"><span class="logo-icon" aria-hidden="true">z</span>zwart<span style="color:#8b9484">.</span></a><div class="links"><a href="#produk">Produk</a><a href="#studio">Tentang</a><a href="#pendekatan">Pendekatan</a><a href="https://wa.me/62895333632647" target="_blank" rel="noopener noreferrer" class="navcta">WhatsApp ↗</a></div></nav></header>
 <main id="awal">
 <section class="container hero"><div class="eyebrow mono"><span class="dot"></span>Independent software studio <span class="muted">/ Indonesia</span></div><div class="hero-layout"><h1>Teknologi yang<br><span>memudahkan</span><br>bisnis Anda.</h1><div class="hero-side"><p>Kami merancang software yang mudah digunakan untuk mengelola bisnis, menyederhanakan pekerjaan, dan memberi ruang untuk berkembang.</p><div class="actions"><a class="btn" href="#produk">Jelajahi produk <span>↗</span></a><a class="btn alt" href="#kontak">Diskusikan kebutuhan <span>→</span></a></div></div></div><div class="hero-foot"><span class="mono muted">Zwart Id · Software studio independen · Indonesia</span><a href="#produk" class="arrow" aria-label="Lihat produk">↓</a></div></section>
 <section class="container" id="produk"><div class="section-top"><span class="mono">01 / Produk pilihan</span><p>Pilihan produk dari Zwart Id, dari pengelolaan bisnis hingga alat untuk bekerja dan berkarya.</p></div><h2 class="section-title">Lebih dari sekadar aplikasi.<br>Solusi untuk aktivitas nyata.</h2>
-<div class="featured-grid"><article class="feature-card lead-card"><div class="feature-copy"><div class="project-head"><span class="mono">01 / Operasional UMKM</span><span class="tag">Produk unggulan</span></div><div><h3>DAGANGHUB<span class="accent">.</span></h3><p>Kelola produk, pelanggan, pesanan, stok, invoice, dan laporan usaha dalam satu workspace.</p></div><a class="feature-action" href="https://daganghub-app.zwart.qzz.io/" target="_blank" rel="noopener noreferrer">Buka aplikasi <span>↗</span></a></div><div class="feature-media brand-ui"><div class="dagang-demo" aria-label="Visual konsep dashboard DagangHub; bukan screenshot asli"><div class="demo-side"><strong>daganghub<span style="color:#0071e3">.</span></strong><span>Ringkasan</span><span>Produk</span><span>Pesanan</span><span>Pelanggan</span><span>Stok</span><span>Laporan</span></div><div class="demo-main"><div class="demo-top"><span>Dashboard</span><small>Workspace bisnis</small></div><h4>Selamat datang kembali.</h4><p>Pantau bisnis dari satu tempat.</p><div class="demo-stats"><div><small>Pesanan</small><b>24</b><em>Contoh data</em></div><div><small>Produk</small><b>128</b><em>Contoh data</em></div><div><small>Pelanggan</small><b>86</b><em>Contoh data</em></div></div><div class="demo-graph"><div><b>Aktivitas bisnis</b><small>Ilustrasi</small></div><div class="demo-bars"><i style="height:38%"></i><i style="height:57%"></i><i style="height:47%"></i><i style="height:73%"></i><i style="height:64%"></i><i style="height:86%"></i><i style="height:71%"></i><i style="height:100%"></i><i style="height:79%"></i></div></div></div></div><span class="media-caption">VISUAL KONSEP · BUKAN SCREENSHOT APLIKASI</span></div></article><article class="feature-card "><div class="feature-copy"><div class="project-head"><span class="mono">02 / Asisten AI</span><span class="tag">Windows & Linux</span></div><div><h3>AGEN MINI<span class="accent">.</span></h3><p>Asisten AI dengan chat, integrasi Telegram, file, dan panel kerja.</p></div><a class="feature-action" href="https://github.com/Zwart04/agenmini" target="_blank" rel="noopener noreferrer">Lihat proyek <span>↗</span></a></div><div class="feature-media real-ui"><img src="https://raw.githubusercontent.com/Zwart04/agenmini/main/docs/screenshots/workbench-desktop-v010.jpg" loading="lazy" decoding="async" alt="Screenshot asli antarmuka Agen Mini dari GitHub"><span class="media-caption">SCREENSHOT ASLI / GITHUB</span></div></article><article class="feature-card "><div class="feature-copy"><div class="project-head"><span class="mono">03 / Keuangan</span><span class="tag">Android</span></div><div><h3>SAKU<span class="accent">.</span></h3><p>Pencatatan pengeluaran offline dengan input suara dan pemindaian struk.</p></div><a class="feature-action" href="https://github.com/Zwart04/saku" target="_blank" rel="noopener noreferrer">Lihat proyek <span>↗</span></a></div><div class="feature-media brand-ui"><div class="saku-demo" aria-label="Ilustrasi konsep antarmuka Saku"><div class="phone-notch"></div><small>PENGELUARAN BULAN INI</small><h4>Rp1.248.000</h4><div class="saku-wave">▂ ▄ ▃ ▆ ▄ █ ▅</div><p>Transaksi terakhir</p><div class="saku-item"><span>Belanja harian</span><b>− Rp48.000</b></div><div class="saku-item"><span>Transportasi</span><b>− Rp20.000</b></div><div class="saku-item"><span>Kopi</span><b>− Rp18.000</b></div></div><span class="media-caption">VISUAL KONSEP · BUKAN SCREENSHOT APLIKASI</span></div></article><article class="feature-card "><div class="feature-copy"><div class="project-head"><span class="mono">04 / Produktivitas</span><span class="tag">Web app</span></div><div><h3>DAILYOS<span class="accent">.</span></h3><p>Satu workspace untuk tugas, kebiasaan, catatan, dokumen, dan rencana harian.</p></div><a class="feature-action" href="https://daily-apps-app.zwart.qzz.io/" target="_blank" rel="noopener noreferrer">Buka aplikasi <span>↗</span></a></div><div class="feature-media brand-ui"><div class="daily-demo" aria-label="Ilustrasi konsep workspace DailyOS"><div class="daily-head"><strong>Good morning.</strong><span>Today / 08 October</span></div><p>Fokus hari ini</p><div class="daily-task"><span>✓</span> Review pekerjaan</div><div class="daily-task"><span>✓</span> Rapikan jadwal</div><div class="daily-task"><span>○</span> Tulis catatan baru</div><div class="daily-days"><i>S</i><i>S</i><i>R</i><i>K</i><i>J</i><i>S</i><i>M</i></div></div><span class="media-caption">VISUAL KONSEP · BUKAN SCREENSHOT APLIKASI</span></div></article><article class="feature-card "><div class="feature-copy"><div class="project-head"><span class="mono">05 / Utilitas</span><span class="tag">Web app</span></div><div><h3>RAKAAT COUNTER<span class="accent">.</span></h3><p>Penghitung rakaat berbasis sensor cahaya perangkat, berjalan lewat browser.</p></div><a class="feature-action" href="https://zwart04.github.io/rakaat-counter/" target="_blank" rel="noopener noreferrer">Buka aplikasi <span>↗</span></a></div><div class="feature-media real-ui"><img src="https://raw.githubusercontent.com/Zwart04/rakaat-counter/main/demo.png" loading="lazy" decoding="async" alt="Gambar demo asli Rakaat Counter dari GitHub"><span class="media-caption">GAMBAR DEMO ASLI / GITHUB</span></div></article></div>
+<div class="featured-grid"><article class="feature-card lead-card"><div class="feature-copy"><div class="project-head"><span class="mono">01 / Operasional UMKM</span><span class="tag">Produk unggulan</span></div><div><h3>DAGANGHUB<span class="accent">.</span></h3><p>Kelola produk, pelanggan, pesanan, stok, invoice, dan laporan usaha dalam satu workspace.</p></div><a class="feature-action" href="https://daganghub-app.zwart.qzz.io/" target="_blank" rel="noopener noreferrer">Buka aplikasi <span>↗</span></a></div><div class="feature-media brand-ui"><div class="dagang-demo" aria-label="Visual konsep dashboard DagangHub; bukan screenshot asli"><div class="demo-side"><strong>daganghub<span style="color:#0071e3">.</span></strong><span>Ringkasan</span><span>Produk</span><span>Pesanan</span><span>Pelanggan</span><span>Stok</span><span>Laporan</span></div><div class="demo-main"><div class="demo-top"><span>Dashboard</span><small>Workspace bisnis</small></div><h4>Selamat datang kembali.</h4><p>Pantau bisnis dari satu tempat.</p><div class="demo-stats"><div><small>Pesanan</small><b>24</b><em>Contoh data</em></div><div><small>Produk</small><b>128</b><em>Contoh data</em></div><div><small>Pelanggan</small><b>86</b><em>Contoh data</em></div></div><div class="demo-graph"><div><b>Aktivitas bisnis</b><small>Ilustrasi</small></div><div class="demo-bars"><i style="height:38%"></i><i style="height:57%"></i><i style="height:47%"></i><i style="height:73%"></i><i style="height:64%"></i><i style="height:86%"></i><i style="height:71%"></i><i style="height:100%"></i><i style="height:79%"></i></div><div class="demo-bottom"><span>Pantau pesanan, stok, dan pelanggan</span><strong>● Sistem operasional</strong></div></div></div></div><span class="media-caption">VISUAL KONSEP · BUKAN SCREENSHOT APLIKASI</span></div></article><article class="feature-card "><div class="feature-copy"><div class="project-head"><span class="mono">02 / Asisten AI</span><span class="tag">Windows & Linux</span></div><div><h3>AGEN MINI<span class="accent">.</span></h3><p>Asisten AI dengan chat, integrasi Telegram, file, dan panel kerja.</p></div><a class="feature-action" href="https://github.com/Zwart04/agenmini" target="_blank" rel="noopener noreferrer">Lihat proyek <span>↗</span></a></div><div class="feature-media real-ui"><img src="https://raw.githubusercontent.com/Zwart04/agenmini/main/docs/screenshots/workbench-desktop-v010.jpg" loading="lazy" decoding="async" alt="Screenshot asli antarmuka Agen Mini dari GitHub"><span class="media-caption">SCREENSHOT ASLI / GITHUB</span></div></article><article class="feature-card "><div class="feature-copy"><div class="project-head"><span class="mono">03 / Keuangan</span><span class="tag">Android</span></div><div><h3>SAKU<span class="accent">.</span></h3><p>Pencatatan pengeluaran offline dengan input suara dan pemindaian struk.</p></div><a class="feature-action" href="https://github.com/Zwart04/saku" target="_blank" rel="noopener noreferrer">Lihat proyek <span>↗</span></a></div><div class="feature-media brand-ui"><div class="saku-demo" aria-label="Ilustrasi konsep antarmuka Saku"><div class="phone-notch"></div><small>PENGELUARAN BULAN INI</small><h4>Rp1.248.000</h4><div class="saku-wave">▂ ▄ ▃ ▆ ▄ █ ▅</div><p>Transaksi terakhir</p><div class="saku-item"><span>Belanja harian</span><b>− Rp48.000</b></div><div class="saku-item"><span>Transportasi</span><b>− Rp20.000</b></div><div class="saku-item"><span>Kopi</span><b>− Rp18.000</b></div></div><span class="media-caption">VISUAL KONSEP · BUKAN SCREENSHOT APLIKASI</span></div></article><article class="feature-card "><div class="feature-copy"><div class="project-head"><span class="mono">04 / Produktivitas</span><span class="tag">Web app</span></div><div><h3>DAILYOS<span class="accent">.</span></h3><p>Satu workspace untuk tugas, kebiasaan, catatan, dokumen, dan rencana harian.</p></div><a class="feature-action" href="https://daily-apps-app.zwart.qzz.io/" target="_blank" rel="noopener noreferrer">Buka aplikasi <span>↗</span></a></div><div class="feature-media brand-ui"><div class="daily-demo" aria-label="Ilustrasi konsep workspace DailyOS"><div class="daily-head"><strong>Good morning.</strong><span>Today / 08 October</span></div><p>Fokus hari ini</p><div class="daily-task"><span>✓</span> Review pekerjaan</div><div class="daily-task"><span>✓</span> Rapikan jadwal</div><div class="daily-task"><span>○</span> Tulis catatan baru</div><div class="daily-days"><i>S</i><i>S</i><i>R</i><i>K</i><i>J</i><i>S</i><i>M</i></div><div class="daily-progress"><i></i></div><div class="daily-meta"><span>Progres hari ini</span><strong>2 dari 3 tugas</strong></div></div><span class="media-caption">VISUAL KONSEP · BUKAN SCREENSHOT APLIKASI</span></div></article><article class="feature-card "><div class="feature-copy"><div class="project-head"><span class="mono">05 / Utilitas</span><span class="tag">Web app</span></div><div><h3>RAKAAT COUNTER<span class="accent">.</span></h3><p>Penghitung rakaat berbasis sensor cahaya perangkat, berjalan lewat browser.</p></div><a class="feature-action" href="https://zwart04.github.io/rakaat-counter/" target="_blank" rel="noopener noreferrer">Buka aplikasi <span>↗</span></a></div><div class="feature-media real-ui"><img src="https://raw.githubusercontent.com/Zwart04/rakaat-counter/main/demo.png" loading="lazy" decoding="async" alt="Gambar demo asli Rakaat Counter dari GitHub"><span class="media-caption">GAMBAR DEMO ASLI / GITHUB</span></div></article></div>
 <div class="allwork"><span class="mono muted">Produk terpilih • proyek lain tersedia di GitHub</span><a href="https://github.com/Zwart04?tab=repositories" target="_blank" rel="noopener noreferrer">Eksplorasi proyek lainnya ↗</a></div><p class="project-note">Screenshot Agen Mini dan gambar demo Rakaat Counter berasal dari repository proyek. Dashboard DagangHub, Saku, dan DailyOS adalah ilustrasi konsep dengan data contoh, bukan screenshot aplikasi.</p>
 </section>
 <section class="about" id="studio"><div class="container"><div class="section-top"><span class="mono">02 / Tentang Zwart</span><p>Software studio independen yang dibangun di Indonesia.</p></div><div class="about-grid"><h2>Kecil dalam tim.<br>Serius dalam<br>pengerjaan.</h2><div><p class="about-body">Zwart Id mengembangkan aplikasi dan produk digital yang dekat dengan kebutuhan sehari-hari, terutama produktivitas dan operasional usaha. Kami mengutamakan pengalaman yang mudah dipahami, fungsi yang jelas, dan pengembangan yang terus diperbaiki.</p><div class="fact"><span class="mono muted">Usaha software</span><b>Dimulai April 2026</b></div><div class="fact"><span class="mono muted">Berbasis di</span><b>Indonesia</b></div><div class="fact"><span class="mono muted">Fokus</span><b>Software & digital tools</b></div></div></div></div></section>
@@ -149,4 +225,18 @@ body{background:#fff;color:#1d1d1f;font-family:Inter,"DM Sans",Arial,sans-serif}
 <section class="container contact" id="kontak"><div class="section-top"><span class="mono">04 / Mari terhubung</span><p>Butuh software untuk alur kerja tertentu atau ingin mengetahui produk kami lebih jauh?</p></div><h2>Ada kebutuhan?<br><span>Mari bicara.</span></h2><p>Ceritakan tantangan yang ingin kamu selesaikan. Kita bisa mulai dari percakapan sederhana tentang kebutuhan, alur kerja, dan solusi yang memungkinkan.</p><div class="actions"><a class="btn" href="https://wa.me/62895333632647?text=Halo%20Zwart%20Id%2C%20saya%20ingin%20diskusi%20tentang%20aplikasi." target="_blank" rel="noopener noreferrer">Chat WhatsApp <span>↗</span></a><a class="btn alt" href="https://github.com/Zwart04" target="_blank" rel="noopener noreferrer">Lihat GitHub <span>↗</span></a></div></section>
 </main><footer class="container footer"><span class="mono">© <span id="year">2026</span> Zwart Id</span><a class="mono muted" href="https://wa.me/62895333632647" target="_blank" rel="noopener noreferrer">WhatsApp 0895 3336 32647 ↗</a><a class="mono" href="#awal">Kembali ke atas ↑</a></footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+
+<script>
+(()=>{"use strict";
+const reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if(reduce||!("IntersectionObserver" in window))return;
+const targets=[
+...document.querySelectorAll(".hero .eyebrow,.hero h1,.hero .hero-side,.section-top,.section-title,.feature-card,.about-grid,.approach-item,.contact h2,.contact .actions")
+];targets.forEach((node,i)=>{node.dataset.reveal="";if(node.matches(".feature-card"))node.style.setProperty("--reveal-delay",(i%2)*100+"ms")});
+document.documentElement.classList.add("js-motion");
+const io=new IntersectionObserver((entries,observer)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("in-view");observer.unobserve(entry.target)}})},{rootMargin:"0px 0px -28px 0px",threshold:.06});
+targets.forEach(node=>io.observe(node));
+requestAnimationFrame(()=>{document.querySelectorAll(".hero [data-reveal]").forEach((node,i)=>{node.style.setProperty("--reveal-delay",(i*120)+"ms")})});
+})();
+</script>
 </body></html>

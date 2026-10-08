@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#ffffff">
-<meta name="description" content="Zwart Id membangun aplikasi untuk UMKM dan produktivitas: DagangHub, DailyOS, Saku, serta Agen Mini. Lihat produk dan konsultasi via WhatsApp.">
-<meta property="og:type" content="website"><meta property="og:title" content="Zwart Id — Software yang bekerja untuk Anda"><meta property="og:description" content="Produk digital yang sederhana, fungsional, dan dibuat untuk kebutuhan nyata."><meta property="og:url" content="https://zwart.my.id/"><meta property="og:image" content="https://zwart.my.id/zwart-logo.webp">
+<meta name="description" content="Kenalan dengan DagangHub, DailyOS, Saku, dan Agen Mini. Dibuat untuk usaha dan keseharian yang lebih praktis. Tanya langsung via WhatsApp.">
+<meta property="og:type" content="website"><meta property="og:title" content="Zwart Id — Aplikasi yang bikin kerja lebih ringan"><meta property="og:description" content="Aplikasi untuk membantu usaha dan aktivitas sehari-hari. Yuk, kenalan dengan Zwart."><meta property="og:url" content="https://zwart.my.id/"><meta property="og:image" content="https://zwart.my.id/zwart-logo.webp">
 <title>Zwart Id — Software yang bekerja untuk Anda</title>
-<link rel="icon" type="image/webp" href="/zwart-logo.webp">
+<link rel="icon" type="image/svg+xml" href="/zwart-cat.svg"><link rel="shortcut icon" href="/zwart-cat.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -350,17 +350,68 @@ a[href*="wa.me"] svg{display:inline-block;vertical-align:middle;flex:none}
  .showcase-window{transform:none!important;will-change:auto}
  .showcase-float{animation:none!important}
 }
+
+/* Shorter, human-first homepage copy and founder identity */
+.hero{padding-top:88px}
+.hero h1{font-size:clamp(44px,7.1vw,86px);max-width:1020px}
+.hero-side p{max-width:610px}
+.hero-foot{margin-top:74px}
+#produk{padding-top:72px;padding-bottom:80px}
+.section-title{margin:35px 0 38px}
+.showcase-stack{gap:20px}
+.showcase-card .showcase-copy{min-height:395px;padding:38px}
+.showcase-card .showcase-stage{min-height:395px}
+.showcase-pair .showcase-card .showcase-copy{min-height:298px;padding:30px}
+.showcase-pair .showcase-card .showcase-stage{height:288px;min-height:288px}
+.showcase-story p{font-size:14px;line-height:1.65}
+.showcase-story h4{font-size:clamp(22px,2.4vw,32px)}
+.showcase-bottom{gap:18px}
+.about{background:#101d30;color:#fff;margin:0;padding:75px 0}
+.founder-panel{display:grid;grid-template-columns:200px minmax(0,1fr);align-items:center;gap:50px;max-width:925px}
+.founder-avatar-link{display:block;width:188px;height:188px;border-radius:28px;overflow:hidden;border:4px solid rgba(255,255,255,.15);transition:transform .45s cubic-bezier(.22,1,.36,1)}
+.founder-avatar-link:hover{transform:translateY(-5px)}
+.founder-avatar{width:100%;height:100%;display:block;object-fit:cover;background:#dfe8f4}
+.founder-copy .mono{color:#99bbed}
+.founder-copy h2{font:650 clamp(34px,4vw,54px)/1.14 Inter,"DM Sans",Arial,sans-serif;letter-spacing:-.05em;margin:16px 0}
+.founder-copy p{font-size:16px;line-height:1.7;color:#d5e1f2;max-width:615px;margin:0 0 18px}
+.founder-github{display:inline-flex;gap:15px;align-items:center;font-size:13px;font-weight:650;border-bottom:1px solid #80b8fa;padding-bottom:5px;color:#cae4ff}
+.founder-github:hover{color:#fff}
+.contact{padding:85px 0 94px}
+.contact h2{margin:32px 0 25px}
+.contact p{max-width:590px}
+.hero .btn.alt[href*="wa.me"]{background:#25D366;border:1px solid #25D366;color:#10341e;display:inline-flex;gap:10px;align-items:center}
+.hero .btn.alt[href*="wa.me"]:hover{background:#1ebe5b}
+.founder-avatar-link:focus-visible,.founder-github:focus-visible{outline:3px solid #66a7ff;outline-offset:4px}
+@media(max-width:760px){
+.hero{padding-top:70px}.hero-foot{margin-top:55px}
+#produk{padding-top:60px;padding-bottom:60px}
+.section-title{margin:26px 0 30px}
+.showcase-card .showcase-copy,.showcase-pair .showcase-card .showcase-copy{min-height:0;padding:24px;gap:16px}
+.showcase-card .showcase-stage,.showcase-pair .showcase-card .showcase-stage{min-height:245px;height:245px}
+.founder-panel{grid-template-columns:90px minmax(0,1fr);gap:18px;align-items:start}
+.founder-avatar-link{width:88px;height:88px;border-radius:20px;border-width:2px}
+.founder-copy h2{font-size:29px;margin:10px 0}
+.founder-copy p{font-size:14px}
+.founder-copy .mono{font-size:9px}
+.founder-github{font-size:12px}
+.about{padding:55px 0}
+.contact{padding:65px 0}
+.hero .actions{max-width:440px}
+.hero .btn.alt[href*="wa.me"]{justify-content:center}
+}
+@media(max-width:380px){.founder-panel{grid-template-columns:1fr}.founder-avatar-link{width:100px;height:100px}.showcase-card .showcase-copy,.showcase-pair .showcase-card .showcase-copy{padding:20px}}
+@media(prefers-reduced-motion:reduce){.founder-avatar-link{transition:none!important}.founder-avatar-link:hover{transform:none!important}}
 </style></head>
 <body>
-<header class="topbar"><nav class="container nav" aria-label="Navigasi utama"><a href="#awal" class="logo" aria-label="Zwart Id beranda"><img class="brand-full" src="/zwart-logo.webp" width="100" height="84" alt="Zwart"></a><div class="links"><a href="#produk">Produk</a><a href="#studio">Tentang</a><a href="#pendekatan">Pendekatan</a><a href="https://wa.me/62895333632647" target="_blank" rel="noopener noreferrer" class="navcta"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" fill="currentColor"><path d="M12.04 2A9.9 9.9 0 0 0 3.5 16.95L2 22l5.22-1.42A10 10 0 1 0 12.04 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.85.83-3.03-.2-.31a8.2 8.2 0 1 1 6.97 3.82Zm4.51-6.13c-.25-.13-1.48-.73-1.71-.82-.23-.08-.4-.12-.57.13-.17.25-.65.82-.8.98-.15.17-.3.19-.55.06-.25-.12-1.05-.38-1.99-1.22-.73-.65-1.22-1.45-1.37-1.7-.14-.25-.01-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.41-.56-.42h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.06s.89 2.37 1.01 2.54c.13.17 1.75 2.68 4.25 3.75.59.26 1.05.41 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.48-.61 1.69-1.19.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.29Z"/></svg> <span>WhatsApp</span></a></div></nav></header>
+<header class="topbar"><nav class="container nav" aria-label="Navigasi utama"><a href="#awal" class="logo" aria-label="Zwart Id beranda"><img class="brand-full" src="/zwart-logo.webp" width="100" height="84" alt="Zwart"></a><div class="links"><a href="#produk">Produk</a><a href="#studio">Tentang</a><a href="https://wa.me/62895333632647" target="_blank" rel="noopener noreferrer" class="navcta"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" fill="currentColor"><path d="M12.04 2A9.9 9.9 0 0 0 3.5 16.95L2 22l5.22-1.42A10 10 0 1 0 12.04 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.85.83-3.03-.2-.31a8.2 8.2 0 1 1 6.97 3.82Zm4.51-6.13c-.25-.13-1.48-.73-1.71-.82-.23-.08-.4-.12-.57.13-.17.25-.65.82-.8.98-.15.17-.3.19-.55.06-.25-.12-1.05-.38-1.99-1.22-.73-.65-1.22-1.45-1.37-1.7-.14-.25-.01-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.41-.56-.42h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.06s.89 2.37 1.01 2.54c.13.17 1.75 2.68 4.25 3.75.59.26 1.05.41 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.48-.61 1.69-1.19.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.29Z"/></svg> <span>WhatsApp</span></a></div></nav></header>
 <main id="awal">
-<section class="container hero"><div class="eyebrow mono"><span class="dot"></span>Independent software studio <span class="muted">/ Indonesia</span></div><div class="hero-layout"><h1>Teknologi yang<br><span>memudahkan</span><br>bisnis Anda.</h1><div class="hero-side"><p>Kami merancang software yang mudah digunakan untuk mengelola bisnis, menyederhanakan pekerjaan, dan memberi ruang untuk berkembang.</p><div class="actions"><a class="btn" href="#produk">Jelajahi produk <span>↗</span></a><a class="btn alt" href="#kontak">Diskusikan kebutuhan <span>→</span></a></div></div></div><div class="hero-foot"><span class="mono muted">Zwart Id · Software studio independen · Indonesia</span><a href="#produk" class="arrow" aria-label="Lihat produk">↓</a></div></section>
-<section class="container" id="produk"><div class="section-top"><span class="mono">01 / Produk pilihan</span><p>Pilihan produk dari Zwart Id, dari pengelolaan bisnis hingga alat untuk bekerja dan berkarya.</p></div><h2 class="section-title">Lebih dari sekadar aplikasi.<br>Solusi untuk aktivitas nyata.</h2>
+<section class="container hero"><div class="eyebrow mono"><span class="dot"></span>Software buatan Indonesia <span class="muted">/ Zwart Id</span></div><div class="hero-layout"><h1>Kerja lebih rapi.<br><span>Hidup lebih ringan.</span></h1><div class="hero-side"><p>Dari stok dan pesanan sampai agenda harian, Zwart bikin aplikasi yang membantu kamu fokus ke hal penting.</p><div class="actions"><a class="btn" href="#produk">Kenalan dengan produknya <span>↘</span></a><a class="btn alt" href="https://wa.me/62895333632647?text=Halo%20Zwart%2C%20saya%20mau%20tanya%20soal%20aplikasi." target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" fill="currentColor"><path d="M12.04 2A9.9 9.9 0 0 0 3.5 16.95L2 22l5.22-1.42A10 10 0 1 0 12.04 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.85.83-3.03-.2-.31a8.2 8.2 0 1 1 6.97 3.82Zm4.51-6.13c-.25-.13-1.48-.73-1.71-.82-.23-.08-.4-.12-.57.13-.17.25-.65.82-.8.98-.15.17-.3.19-.55.06-.25-.12-1.05-.38-1.99-1.22-.73-.65-1.22-1.45-1.37-1.7-.14-.25-.01-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.41-.56-.42h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.06s.89 2.37 1.01 2.54c.13.17 1.75 2.68 4.25 3.75.59.26 1.05.41 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.48-.61 1.69-1.19.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.29Z"/></svg><span>Tanya lewat WhatsApp</span></a></div></div></div><div class="hero-foot"><span class="mono muted">Dibangun dengan perhatian pada hal-hal kecil.</span><a href="#produk" class="arrow" aria-label="Lihat produk">↓</a></div></section>
+<section class="container" id="produk"><div class="section-top"><span class="mono">01 / Aplikasi Zwart</span><p>Biar kamu bisa pilih yang paling cocok buat kebutuhanmu.</p></div><h2 class="section-title">Kenali yang sedang<br>kami bangun.</h2>
 <div class="showcase-stack"><article class="showcase-card showcase-lead showcase-daganghub" data-showcase="daganghub">
 <div class="showcase-copy">
  <div class="showcase-meta"><span class="mono">01 / Operasional untuk UMKM</span><span class="showcase-tag">Produk unggulan</span></div>
- <div class="showcase-story"><h3>DagangHub<span class="accent-dot">.</span></h3><h4>Urusan bisnis, lebih tertata.</h4><p>Satu tempat untuk mengatur pesanan, stok, pelanggan, invoice, dan memantau aktivitas penjualan. Dirancang untuk membantu pemilik usaha bekerja lebih terstruktur.</p></div>
- <div class="showcase-bottom"><div class="showcase-pills"><span>Pesanan & produk</span><span>Stok & inventori</span><span>Laporan usaha</span></div><a class="showcase-cta" href="https://daganghub-app.zwart.qzz.io/" target="_blank" rel="noopener noreferrer">Kenali DagangHub <span aria-hidden="true">↗</span></a></div>
+ <div class="showcase-story"><h3>DagangHub<span class="accent-dot">.</span></h3><h4>Kelola usaha tanpa pindah-pindah tab.</h4><p>Pantau pesanan, stok, pelanggan, dan penjualan dari satu tempat.</p></div>
+ <div class="showcase-bottom"><div class="showcase-pills"><span>Pesanan & produk</span><span>Stok & inventori</span><span>Laporan usaha</span></div><a class="showcase-cta" href="https://daganghub-app.zwart.qzz.io/" target="_blank" rel="noopener noreferrer">Lihat DagangHub <span aria-hidden="true">↗</span></a></div>
 </div>
 <div class="showcase-stage" aria-label="Visual konsep produk DagangHub, bukan screenshot dari aplikasi yang dirilis">
  <div class="showcase-orbit orbit-a" aria-hidden="true"></div><div class="showcase-orbit orbit-b" aria-hidden="true"></div>
@@ -370,8 +421,8 @@ a[href*="wa.me"] svg{display:inline-block;vertical-align:middle;flex:none}
 </div></article><article class="showcase-card showcase-reverse showcase-dailyos" data-showcase="dailyos">
 <div class="showcase-copy">
  <div class="showcase-meta"><span class="mono">02 / Produktivitas</span><span class="showcase-tag">Ruang kerja pribadi</span></div>
- <div class="showcase-story"><h3>DailyOS<span class="accent-dot">.</span></h3><h4>Ruang untuk hari yang lebih fokus.</h4><p>Susun agenda, pantau kebiasaan, simpan catatan, dan kerjakan prioritas harian dalam workspace yang tenang serta mudah dipahami.</p></div>
- <div class="showcase-bottom"><div class="showcase-pills"><span>Tugas & kalender</span><span>Habit tracker</span><span>Catatan & fokus</span></div><a class="showcase-cta" href="https://daily-apps-app.zwart.qzz.io/" target="_blank" rel="noopener noreferrer">Jelajahi DailyOS <span aria-hidden="true">↗</span></a></div>
+ <div class="showcase-story"><h3>DailyOS<span class="accent-dot">.</span></h3><h4>Bikin hari terasa lebih tertata.</h4><p>Tugas, kebiasaan, jadwal, dan catatan ada di satu ruang kerja.</p></div>
+ <div class="showcase-bottom"><div class="showcase-pills"><span>Tugas & kalender</span><span>Habit tracker</span><span>Catatan & fokus</span></div><a class="showcase-cta" href="https://daily-apps-app.zwart.qzz.io/" target="_blank" rel="noopener noreferrer">Lihat DailyOS <span aria-hidden="true">↗</span></a></div>
 </div>
 <div class="showcase-stage" aria-label="Visual konsep produk DailyOS, bukan screenshot dari aplikasi yang dirilis">
  <div class="showcase-orbit orbit-a" aria-hidden="true"></div><div class="showcase-orbit orbit-b" aria-hidden="true"></div>
@@ -381,8 +432,8 @@ a[href*="wa.me"] svg{display:inline-block;vertical-align:middle;flex:none}
 </div></article><div class="showcase-pair"><article class="showcase-card showcase-compact showcase-saku" data-showcase="saku">
 <div class="showcase-copy">
  <div class="showcase-meta"><span class="mono">03 / Keuangan pribadi</span><span class="showcase-tag">Mobile app</span></div>
- <div class="showcase-story"><h3>Saku<span class="accent-dot">.</span></h3><h4>Lebih paham ke mana uang pergi.</h4><p>Pencatatan pengeluaran yang praktis, dilengkapi ringkasan kategori dan konsep input lewat suara serta scan struk.</p></div>
- <div class="showcase-bottom"><div class="showcase-pills"><span>Catat transaksi</span><span>Ringkasan bulanan</span></div><a class="showcase-cta" href="https://github.com/Zwart04/saku" target="_blank" rel="noopener noreferrer">Lihat proyek Saku <span aria-hidden="true">↗</span></a></div>
+ <div class="showcase-story"><h3>Saku<span class="accent-dot">.</span></h3><h4>Tahu uangmu pergi ke mana.</h4><p>Catat pengeluaran, lihat ringkasannya, dan atur uang dengan lebih sadar.</p></div>
+ <div class="showcase-bottom"><div class="showcase-pills"><span>Catat transaksi</span><span>Ringkasan bulanan</span></div><a class="showcase-cta" href="https://github.com/Zwart04/saku" target="_blank" rel="noopener noreferrer">Lihat Saku <span aria-hidden="true">↗</span></a></div>
 </div>
 <div class="showcase-stage" aria-label="Visual konsep produk Saku, bukan screenshot dari aplikasi yang dirilis">
  <div class="showcase-orbit orbit-a" aria-hidden="true"></div><div class="showcase-orbit orbit-b" aria-hidden="true"></div>
@@ -392,8 +443,8 @@ a[href*="wa.me"] svg{display:inline-block;vertical-align:middle;flex:none}
 </div></article><article class="showcase-card showcase-compact showcase-agenmini" data-showcase="agenmini">
 <div class="showcase-copy">
  <div class="showcase-meta"><span class="mono">04 / AI & otomasi</span><span class="showcase-tag">Desktop tools</span></div>
- <div class="showcase-story"><h3>Agen Mini<span class="accent-dot">.</span></h3><h4>Asisten untuk pekerjaan yang berulang.</h4><p>Eksplorasi asisten AI dengan chat, pengelolaan berkas, koneksi Telegram, dan alur kerja dalam satu aplikasi.</p></div>
- <div class="showcase-bottom"><div class="showcase-pills"><span>Chat & tools</span><span>Workflow otomatis</span></div><a class="showcase-cta" href="https://github.com/Zwart04/agenmini" target="_blank" rel="noopener noreferrer">Kenali Agen Mini <span aria-hidden="true">↗</span></a></div>
+ <div class="showcase-story"><h3>Agen Mini<span class="accent-dot">.</span></h3><h4>Biar tugas rutin nggak makan waktu.</h4><p>Eksperimen asisten AI untuk chat, file, dan pekerjaan berulang.</p></div>
+ <div class="showcase-bottom"><div class="showcase-pills"><span>Chat & tools</span><span>Workflow otomatis</span></div><a class="showcase-cta" href="https://github.com/Zwart04/agenmini" target="_blank" rel="noopener noreferrer">Lihat Agen Mini <span aria-hidden="true">↗</span></a></div>
 </div>
 <div class="showcase-stage" aria-label="Visual konsep produk Agen Mini, bukan screenshot dari aplikasi yang dirilis">
  <div class="showcase-orbit orbit-a" aria-hidden="true"></div><div class="showcase-orbit orbit-b" aria-hidden="true"></div>
@@ -403,9 +454,8 @@ a[href*="wa.me"] svg{display:inline-block;vertical-align:middle;flex:none}
 </div></article></div></div>
 <div class="allwork"><span class="mono muted">Produk terpilih • proyek lain tersedia di GitHub</span><a href="https://github.com/Zwart04?tab=repositories" target="_blank" rel="noopener noreferrer">Eksplorasi proyek lainnya ↗</a></div><p class="project-note">Ilustrasi antarmuka di atas dibuat untuk menggambarkan arah produk dan fitur yang relevan. Angka serta aktivitas adalah contoh, bukan data pengguna atau screenshot aplikasi yang sedang berjalan.</p>
 </section>
-<section class="about" id="studio"><div class="container"><div class="section-top"><span class="mono">02 / Tentang Zwart</span><p>Software studio independen yang dibangun di Indonesia.</p></div><div class="about-grid"><h2>Kecil dalam tim.<br>Serius dalam<br>pengerjaan.</h2><div><p class="about-body">Zwart Id mengembangkan aplikasi dan produk digital yang dekat dengan kebutuhan sehari-hari, terutama produktivitas dan operasional usaha. Kami mengutamakan pengalaman yang mudah dipahami, fungsi yang jelas, dan pengembangan yang terus diperbaiki.</p><div class="fact"><span class="mono muted">Usaha software</span><b>Dimulai April 2026</b></div><div class="fact"><span class="mono muted">Berbasis di</span><b>Indonesia</b></div><div class="fact"><span class="mono muted">Fokus</span><b>Software & digital tools</b></div></div></div></div></section>
-<section class="container approach" id="pendekatan"><div class="section-top"><span class="mono">03 / Cara kami bekerja</span><p>Fungsi lebih dulu. Detail menyusul. Kerumitan hanya ditambahkan jika benar-benar dibutuhkan.</p></div><h2 class="section-title">Sederhana bukan berarti<br>seadanya.</h2><div class="approach-grid"><div class="approach-item"><span class="mono muted">01 / Relevan</span><h3>Mulai dari kebutuhan.</h3><p>Masalah nyata lebih penting daripada daftar fitur yang panjang. Kami merancang berdasarkan pekerjaan yang ingin diselesaikan.</p></div><div class="approach-item"><span class="mono muted">02 / Jelas</span><h3>Mudah dipahami.</h3><p>Alur, bahasa, dan antarmuka dibangun supaya orang bisa fokus menggunakan produk, bukan mempelajari kerumitannya.</p></div><div class="approach-item"><span class="mono muted">03 / Berkembang</span><h3>Terus disempurnakan.</h3><p>Produk digital selalu bisa lebih baik. Setiap iterasi diarahkan untuk meningkatkan kegunaan dan keandalan.</p></div></div></section>
-<section class="container contact" id="kontak"><div class="section-top"><span class="mono">04 / Mari terhubung</span><p>Butuh software untuk alur kerja tertentu atau ingin mengetahui produk kami lebih jauh?</p></div><h2>Ada kebutuhan?<br><span>Mari bicara.</span></h2><p>Ceritakan tantangan yang ingin kamu selesaikan. Kita bisa mulai dari percakapan sederhana tentang kebutuhan, alur kerja, dan solusi yang memungkinkan.</p><div class="actions"><a class="btn" href="https://wa.me/62895333632647?text=Halo%20Zwart%20Id%2C%20saya%20ingin%20diskusi%20tentang%20aplikasi." target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" fill="currentColor"><path d="M12.04 2A9.9 9.9 0 0 0 3.5 16.95L2 22l5.22-1.42A10 10 0 1 0 12.04 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.85.83-3.03-.2-.31a8.2 8.2 0 1 1 6.97 3.82Zm4.51-6.13c-.25-.13-1.48-.73-1.71-.82-.23-.08-.4-.12-.57.13-.17.25-.65.82-.8.98-.15.17-.3.19-.55.06-.25-.12-1.05-.38-1.99-1.22-.73-.65-1.22-1.45-1.37-1.7-.14-.25-.01-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.41-.56-.42h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.06s.89 2.37 1.01 2.54c.13.17 1.75 2.68 4.25 3.75.59.26 1.05.41 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.48-.61 1.69-1.19.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.29Z"/></svg> <span>Chat via WhatsApp</span></a><a class="btn alt" href="https://github.com/Zwart04" target="_blank" rel="noopener noreferrer">Lihat GitHub <span>↗</span></a></div></section>
+<section class="about" id="studio"><div class="container founder-panel"><a class="founder-avatar-link" href="https://github.com/Zwart04" target="_blank" rel="noopener noreferrer" aria-label="Buka profil GitHub Zwart04"><img class="founder-avatar" src="https://github.com/Zwart04.png?size=320" alt="Foto profil GitHub Zwart04" width="188" height="188" loading="lazy" decoding="async"></a><div class="founder-copy"><span class="mono">02 / Di balik Zwart</span><h2>Halo, kami Zwart.</h2><p>Studio software independen dari Indonesia. Kami suka membuat alat yang sederhana, enak dipakai, dan benar-benar membantu pekerjaan sehari-hari.</p><a href="https://github.com/Zwart04" target="_blank" rel="noopener noreferrer" class="founder-github">Kenalan lewat GitHub @Zwart04 <span aria-hidden="true">↗</span></a></div></div></section>
+<section class="container contact" id="kontak"><div class="section-top"><span class="mono">03 / Ngobrol dulu, yuk</span><p>Ada kebutuhan atau mau tanya soal aplikasi?</p></div><h2>Punya ide?<br><span>Ceritain aja.</span></h2><p>Nggak perlu brief panjang. Kirim pesan, ceritakan masalahnya, lalu kita lihat apa yang bisa dibantu.</p><div class="actions"><a class="btn" href="https://wa.me/62895333632647?text=Halo%20Zwart%2C%20saya%20ingin%20diskusi%20tentang%20aplikasi." target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" fill="currentColor"><path d="M12.04 2A9.9 9.9 0 0 0 3.5 16.95L2 22l5.22-1.42A10 10 0 1 0 12.04 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.85.83-3.03-.2-.31a8.2 8.2 0 1 1 6.97 3.82Zm4.51-6.13c-.25-.13-1.48-.73-1.71-.82-.23-.08-.4-.12-.57.13-.17.25-.65.82-.8.98-.15.17-.3.19-.55.06-.25-.12-1.05-.38-1.99-1.22-.73-.65-1.22-1.45-1.37-1.7-.14-.25-.01-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.41-.56-.42h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.06s.89 2.37 1.01 2.54c.13.17 1.75 2.68 4.25 3.75.59.26 1.05.41 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.48-.61 1.69-1.19.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.29Z"/></svg> <span>Chat lewat WhatsApp</span></a><a class="btn alt" href="https://github.com/Zwart04" target="_blank" rel="noopener noreferrer">Lihat GitHub <span>↗</span></a></div></section>
 </main><footer class="container footer"><span class="mono">© <span id="year">2026</span> Zwart Id</span><a class="mono muted" href="https://wa.me/62895333632647" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" fill="currentColor"><path d="M12.04 2A9.9 9.9 0 0 0 3.5 16.95L2 22l5.22-1.42A10 10 0 1 0 12.04 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.85.83-3.03-.2-.31a8.2 8.2 0 1 1 6.97 3.82Zm4.51-6.13c-.25-.13-1.48-.73-1.71-.82-.23-.08-.4-.12-.57.13-.17.25-.65.82-.8.98-.15.17-.3.19-.55.06-.25-.12-1.05-.38-1.99-1.22-.73-.65-1.22-1.45-1.37-1.7-.14-.25-.01-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.41-.56-.42h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.06s.89 2.37 1.01 2.54c.13.17 1.75 2.68 4.25 3.75.59.26 1.05.41 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.48-.61 1.69-1.19.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.29Z"/></svg> WhatsApp 0895 3336 32647 ↗</a><a class="mono" href="#awal">Kembali ke atas ↑</a></footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
 

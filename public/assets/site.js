@@ -1,57 +1,91 @@
-document.getElementById('year').textContent=new Date().getFullYear();
+/* Zwart Studio — motion system v3 */
+(() => {
+  "use strict";
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+  const year = $("#year");
+  if (year) year.textContent = String(new Date().getFullYear());
 
-(()=>{"use strict";
-const reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-if(reduce||!("IntersectionObserver" in window))return;
-const targets=[
-...document.querySelectorAll(".hero .eyebrow,.hero h1,.hero .hero-side,.section-top,.section-title,.showcase-card,.about-grid,.approach-item,.contact h2,.contact .actions")
-];targets.forEach((node,i)=>{node.dataset.reveal="";if(node.matches(".showcase-card"))node.style.setProperty("--reveal-delay",(i%2)*100+"ms")});
-document.documentElement.classList.add("js-motion");
-const io=new IntersectionObserver((entries,observer)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("in-view");observer.unobserve(entry.target)}})},{rootMargin:"0px 0px -28px 0px",threshold:.06});
-targets.forEach(node=>io.observe(node));
-requestAnimationFrame(()=>{document.querySelectorAll(".hero [data-reveal]").forEach((node,i)=>{node.style.setProperty("--reveal-delay",(i*120)+"ms")})});
-})();
-;
-
-(()=>{"use strict";
-const mm=window.matchMedia("(prefers-reduced-motion: reduce)");
-const fine=window.matchMedia("(hover:hover) and (pointer:fine)");
-const cards=[...document.querySelectorAll(".showcase-card")];
-if(mm.matches||!cards.length)return;
-let frame=0;
-if(fine.matches)cards.forEach(card=>{
- const panel=card.querySelector(".showcase-window");
- card.addEventListener("pointermove",event=>{
-  if(frame)return;
-  frame=requestAnimationFrame(()=>{
-   frame=0;
-   const rect=card.getBoundingClientRect();
-   const fx=Math.max(-1,Math.min(1,((event.clientX-rect.left)/rect.width-.5)*2));
-   const fy=Math.max(-1,Math.min(1,((event.clientY-rect.top)/rect.height-.5)*2));
-   panel.style.setProperty("--ty",(fx*4).toFixed(2)+"deg");
-   panel.style.setProperty("--tx",(-fy*3).toFixed(2)+"deg");
-  });
- },{passive:true});
- card.addEventListener("pointerleave",()=>{
-  panel.style.setProperty("--tx","0deg");
-  panel.style.setProperty("--ty","0deg");
- });
-});
-if(window.innerWidth<901)return;
-let ticking=false;
-const onScroll=()=>{
- if(ticking)return;
- ticking=true;
- requestAnimationFrame(()=>{
-  ticking=false;
-  for(const card of cards){
-   const box=card.getBoundingClientRect();
-   if(box.bottom<0||box.top>window.innerHeight)continue;
-   const center=box.top+box.height/2;
-   const shift=Math.max(-14,Math.min(14,(window.innerHeight/2-center)*.024));
-   card.querySelector(".showcase-window").style.setProperty("--float-y",shift.toFixed(1)+"px");
+  // Content remains visible if JS cannot load.
+  if (!reduced.matches && "IntersectionObserver" in window) {
+    const elements = $$(".section-top, .section-title, .showcase-card, .founder-panel, .contact h2, .contact p, .contact .actions");
+    const observer = new IntersectionObserver((entries, ob) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add("in-view");
+        ob.unobserve(entry.target);
+      }
+    }, { threshold: 0.06, rootMargin: "0px 0px -5% 0px" });
+    elements.forEach((el, index) => {
+      el.classList.add("reveal-ready");
+      el.style.setProperty("--reveal-delay", String((index % 2) * 85) + "ms");
+      observer.observe(el);
+    });
+    document.documentElement.classList.add("motion-ready");
   }
- });
-};
-window.addEventListener("scroll",onScroll,{passive:true});onScroll();
+
+  const progress = $(".scroll-progress");
+  const cards = $$(".showcase-card");
+  const panels = cards.map(card => ({ card: card, panel: $(".showcase-window", card) })).filter(item => item.panel);
+  const root = document.documentElement;
+  let scrollFrame = 0;
+  function updateOnScroll() {
+    scrollFrame = 0;
+    const max = Math.max(1, root.scrollHeight - window.innerHeight);
+    root.style.setProperty("--zw-scroll", Math.min(1, Math.max(0, window.scrollY / max)).toFixed(4));
+    if (reduced.matches) return;
+    const mid = window.innerHeight * 0.5;
+    for (const item of panels) {
+      const rect = item.card.getBoundingClientRect();
+      if (rect.bottom < -100 || rect.top > window.innerHeight + 100) continue;
+      const shift = Math.max(-15, Math.min(15, (mid - (rect.top + rect.height * 0.5)) * 0.035));
+      item.panel.style.setProperty("--float-y", shift.toFixed(1) + "px");
+    }
+  }
+  function scheduleScroll() {
+    if (scrollFrame) return;
+    scrollFrame = window.requestAnimationFrame(updateOnScroll);
+  }
+  window.addEventListener("scroll", scheduleScroll, { passive: true });
+  window.addEventListener("resize", scheduleScroll, { passive: true });
+  if (progress) scheduleScroll();
+
+  // Mouse/trackpad depth, disabled for touch and reduced motion.
+  if (finePointer.matches && !reduced.matches) {
+    panels.forEach(item => {
+      let pointerFrame = 0;
+      let x = 0, y = 0;
+      item.card.addEventListener("pointermove", event => {
+        x = event.clientX; y = event.clientY;
+        if (pointerFrame) return;
+        pointerFrame = window.requestAnimationFrame(() => {
+          pointerFrame = 0;
+          const bounds = item.card.getBoundingClientRect();
+          const dx = Math.max(-1, Math.min(1, (x - bounds.left) / bounds.width * 2 - 1));
+          const dy = Math.max(-1, Math.min(1, (y - bounds.top) / bounds.height * 2 - 1));
+          item.panel.style.setProperty("--ty", (dx * 6).toFixed(2) + "deg");
+          item.panel.style.setProperty("--tx", (-dy * 4).toFixed(2) + "deg");
+        });
+      }, { passive: true });
+      item.card.addEventListener("pointerleave", () => {
+        item.panel.style.setProperty("--tx", "0deg");
+        item.panel.style.setProperty("--ty", "0deg");
+      });
+    });
+  }
+
+  if (typeof reduced.addEventListener === "function") {
+    reduced.addEventListener("change", () => {
+      if (reduced.matches) {
+        $$(".reveal-ready").forEach(el => el.classList.add("in-view"));
+        panels.forEach(item => {
+          item.panel.style.setProperty("--float-y", "0px");
+          item.panel.style.setProperty("--tx", "0deg");
+          item.panel.style.setProperty("--ty", "0deg");
+        });
+      }
+    });
+  }
 })();

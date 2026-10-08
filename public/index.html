@@ -4,9 +4,9 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#ffffff">
 <meta name="description" content="Zwart Id membangun produk digital praktis untuk usaha dan aktivitas sehari-hari. Kenali DagangHub, Saku, DailyOS, RenderForge, dan Agen Mini.">
-<meta property="og:type" content="website"><meta property="og:title" content="Zwart Id — Software yang bekerja untuk Anda"><meta property="og:description" content="Produk digital yang sederhana, fungsional, dan dibuat untuk kebutuhan nyata."><meta property="og:url" content="https://zwart.my.id/">
+<meta property="og:type" content="website"><meta property="og:title" content="Zwart Id — Software yang bekerja untuk Anda"><meta property="og:description" content="Produk digital yang sederhana, fungsional, dan dibuat untuk kebutuhan nyata."><meta property="og:url" content="https://zwart.my.id/"><meta property="og:image" content="https://zwart.my.id/zwart-mark.svg">
 <title>Zwart Id — Software yang bekerja untuk Anda</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231c241e'/%3E%3Cpath d='M18 20h29v7L27 41h20v5H17v-7l20-13H18z' fill='%23dcec9d'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="/zwart-mark.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -211,9 +211,57 @@ html{scroll-behavior:auto}
 .feature-card,.dagang-demo,.daily-demo,.btn,.navcta,.feature-action{transition:none!important;animation:none!important}
 .feature-card:hover,.lead-card:hover .dagang-demo,.feature-card:hover .daily-demo{transform:none!important}
 }
+
+/* Brand lockup and consistent conversion-ready mobile cards */
+.brand-mascot{width:42px;height:42px;display:block;flex:none;border-radius:12px}
+.brand-wordmark{display:inline-block;font:700 23px/1 Inter,system-ui,sans-serif;letter-spacing:-.05em;color:#0f223b}
+.brand-accent{color:#087cda}
+.logo{gap:9px}
+.featured-grid{align-items:stretch}
+.feature-card{min-height:0;display:grid;grid-template-rows:auto 330px;overflow:hidden}
+.feature-card.lead-card{grid-template-rows:none;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:490px}
+.feature-copy,.lead-card .feature-copy{min-height:0;display:flex;flex-direction:column;gap:22px}
+.feature-copy>div:nth-child(2){margin-top:auto;margin-bottom:auto}
+.feature-copy .feature-action{margin-top:auto;min-height:44px;align-items:center;display:inline-flex;align-self:start}
+.feature-card .feature-media{height:330px;min-height:0;width:100%;padding:26px;overflow:hidden}
+.feature-card.lead-card .feature-media{height:100%;min-height:490px}
+.feature-media .real-ui{width:100%;height:100%}
+.real-ui img{width:100%;height:100%;max-height:100%;object-fit:contain}
+.feature-media .daily-demo,.feature-media .dagang-demo{max-width:100%;flex:none}
+.dagang-demo{width:100%;max-width:520px;height:365px}
+.daily-demo{width:min(100%,385px)}
+.actions .btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center;text-align:center}
+.contact .actions{align-items:stretch}
+@media(max-width:760px){
+ .brand-mascot{width:36px;height:36px}.brand-wordmark{font-size:20px}
+ .links a[href="#produk"],.links a[href="#studio"],.links a[href="#pendekatan"]{display:none}
+ .navcta{font-size:13px;min-height:44px;display:inline-flex;align-items:center}
+ .featured-grid{grid-template-columns:minmax(0,1fr)}
+ .feature-card,.feature-card.lead-card{display:flex;flex-direction:column;min-width:0}
+ .feature-card .feature-copy,.feature-card.lead-card .feature-copy{width:100%;padding:24px;min-height:265px}
+ .feature-card .feature-media,.feature-card.lead-card .feature-media{width:100%;height:310px;min-height:310px;max-height:310px;padding:18px}
+ .feature-card .feature-action{min-height:48px}
+ .dagang-demo{height:270px;width:100%;transform:none;min-width:0}
+ .daily-demo{height:auto;max-height:272px;transform:none}
+ .hero .actions,.contact .actions{display:flex;flex-direction:column;width:100%;max-width:420px}
+ .hero .btn,.contact .btn{width:100%;min-height:50px;justify-content:center}
+}
+@media(max-width:380px){
+ .feature-card .feature-media,.feature-card.lead-card .feature-media{height:270px;min-height:270px;max-height:270px;padding:12px}
+ .dagang-demo{height:246px}
+ .daily-demo{padding:13px}
+ .demo-side{font-size:7px}
+ .demo-main{min-width:0}
+ .demo-top small{display:none}
+ .demo-stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .demo-stats>div{min-width:0}
+ .media-caption{font-size:8px;max-width:85%;white-space:normal}
+}
+@media(prefers-reduced-motion:reduce){.feature-card:hover{transform:none!important}}
+
 </style></head>
 <body>
-<header class="topbar"><nav class="container nav" aria-label="Navigasi utama"><a href="#awal" class="logo" aria-label="Zwart Id beranda"><span class="logo-icon" aria-hidden="true">z</span>zwart<span style="color:#8b9484">.</span></a><div class="links"><a href="#produk">Produk</a><a href="#studio">Tentang</a><a href="#pendekatan">Pendekatan</a><a href="https://wa.me/62895333632647" target="_blank" rel="noopener noreferrer" class="navcta">WhatsApp ↗</a></div></nav></header>
+<header class="topbar"><nav class="container nav" aria-label="Navigasi utama"><a href="#awal" class="logo" aria-label="Zwart Id beranda"><img class="brand-mascot" src="/zwart-mark.svg" width="42" height="42" alt="" aria-hidden="true"> <span class="brand-wordmark">Zwart<span class="brand-accent">.</span></span></a><div class="links"><a href="#produk">Produk</a><a href="#studio">Tentang</a><a href="#pendekatan">Pendekatan</a><a href="https://wa.me/62895333632647" target="_blank" rel="noopener noreferrer" class="navcta">WhatsApp ↗</a></div></nav></header>
 <main id="awal">
 <section class="container hero"><div class="eyebrow mono"><span class="dot"></span>Independent software studio <span class="muted">/ Indonesia</span></div><div class="hero-layout"><h1>Teknologi yang<br><span>memudahkan</span><br>bisnis Anda.</h1><div class="hero-side"><p>Kami merancang software yang mudah digunakan untuk mengelola bisnis, menyederhanakan pekerjaan, dan memberi ruang untuk berkembang.</p><div class="actions"><a class="btn" href="#produk">Jelajahi produk <span>↗</span></a><a class="btn alt" href="#kontak">Diskusikan kebutuhan <span>→</span></a></div></div></div><div class="hero-foot"><span class="mono muted">Zwart Id · Software studio independen · Indonesia</span><a href="#produk" class="arrow" aria-label="Lihat produk">↓</a></div></section>
 <section class="container" id="produk"><div class="section-top"><span class="mono">01 / Produk pilihan</span><p>Pilihan produk dari Zwart Id, dari pengelolaan bisnis hingga alat untuk bekerja dan berkarya.</p></div><h2 class="section-title">Lebih dari sekadar aplikasi.<br>Solusi untuk aktivitas nyata.</h2>
